@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 
-from .models import Hero , Post ,Category ,PostImage ,AboutMe
-from .serializers import SerializerHero , SerializerPost ,SerializerCategory ,SerializerPostImage ,SerializerAboutMe
+from .models import Hero, Post, Category, PostImage, AboutMe, Paragraph
+from .serializers import SerializerHero, SerializerPost, SerializerCategory, SerializerPostImage, SerializerAboutMe, SerializerParagraph
 
 
 class ViewHero(viewsets.ModelViewSet):
@@ -28,3 +28,7 @@ class ViewAboutMe(viewsets.ModelViewSet):
     queryset = AboutMe.objects.all()
     serializer_class = SerializerAboutMe
 
+
+class ViewParagraph(viewsets.ModelViewSet):
+    queryset = Paragraph.objects.all()
+    serializer_class = SerializerParagraph

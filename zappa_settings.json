@@ -1,0 +1,10 @@
+{
+  "dev": {
+    "django_settings": "blog_pro.settings",
+    "profile_name": "default",
+    "project_name": "root",
+    "runtime": "python3.8",
+    "s3_bucket": "blog-mayan",
+    "aws_region": "us-east-1"
+  }
+}

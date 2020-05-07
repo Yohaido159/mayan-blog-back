@@ -3,5 +3,5 @@
   "python.linting.pylintEnabled": true,
   "python.linting.pycodestyleEnabled": false,
   "python.linting.enabled": true,
-  "python.formatting.provider": "yapf"
+  "python.formatting.provider": "autopep8"
 }
