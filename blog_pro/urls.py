@@ -25,6 +25,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("api/", include('blog.urls')),
     path('tinymce/', include('tinymce.urls')),
+    path('rest/', include('rest_auth.urls')),
+    path('rest/registration/', include('rest_auth.registration.urls'))
+
+
 
 ]
 

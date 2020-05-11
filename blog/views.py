@@ -3,6 +3,8 @@ from rest_framework import viewsets
 from .models import Hero, Post, Category, PostImage, AboutMe, Paragraph
 from .serializers import SerializerHero, SerializerPost, SerializerCategory, SerializerPostImage, SerializerAboutMe, SerializerParagraph
 
+from rest_framework_jwt.authentication import JSONWebTokenAuthentication
+
 
 class ViewHero(viewsets.ModelViewSet):
     queryset = Hero.objects.all()
@@ -10,6 +12,8 @@ class ViewHero(viewsets.ModelViewSet):
 
 
 class ViewPost(viewsets.ModelViewSet):
+    authentication_classes = (JSONWebTokenAuthentication, )
+
     queryset = Post.objects.all()
     serializer_class = SerializerPost
 

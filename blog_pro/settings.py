@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import datetime
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -43,13 +44,20 @@ INSTALLED_APPS = [
     # third-party
     "rest_framework",
 
+    # REGISTER USER
+    'rest_framework.authtoken',
+    'rest_auth',
+    'rest_auth.registration',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+
+
     'corsheaders',
 
     'ckeditor',
 
     "django_s3_storage"
-
-
 
 ]
 
@@ -233,3 +241,17 @@ CKEDITOR_UPLOAD_PATH = "uploads/"
 # AWS_S3_BUCKET_NAME_STATIC = S3_BUCKET
 
 # STATIC_URL = "https://%s.s3.amazonaws.com/" % S3_BUCKET
+
+SITE_ID = 1
+REST_USE_JWT = True
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+    ),
+}
+
+
+JWT_AUTH = {
+    'JWT_EXPIRATION_DELTA': datetime.timedelta(days=1),
+}
